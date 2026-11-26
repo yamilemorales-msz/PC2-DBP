@@ -60,7 +60,7 @@ export default function MyLoansPage() {
               <p>Libro: {b.bookTitle}</p>
               <p>Días: {b.days}</p>
               <p>Estado: {b.status}</p>
-              {b.status === 'RETURNED' && (
+              {b.status === 'ACTIVED' && (
                 <button onClick={() => finish(b.id)} disabled={busyId === b.id}
                   className="mt-2 border border-red-600 text-red-600 px-3 py-1 rounded disabled:opacity-50">
                   Devolver
