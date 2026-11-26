@@ -16,7 +16,7 @@ export default function LoginPage() {
     try {
       const { data } = await api.post('/auth/login', { email, password });
       localStorage.setItem('token', data.token);
-      navigate('/books');
+      navigate('/Authorization');
     } catch (err) {
       setError(apiError(err).message);
     } finally {

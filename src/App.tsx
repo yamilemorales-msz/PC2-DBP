@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate, Outlet, Link, useNavigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import DashboardPage from './pages/DashboardPage';
+import MaterialsPage from './pages/materialsPage';
 import RoomDetailPage from './pages/RoomDetailPage.tsx';
-import MyBookingsPage from './pages/MyBookingsPage';
+import MyLoansPage from './pages/MyLoansPage.tsx';
 
 function ProtectedLayout() {
   const navigate = useNavigate();
@@ -18,8 +18,8 @@ function ProtectedLayout() {
   return (
     <div>
       <header className="flex gap-4 p-4 bg-gray-100">
-        <Link to="/books">Libros</Link> {/* CAMBIÓ */}
-        <Link to="/my-loans">Mis préstamos</Link> {/* CAMBIÓ */}
+        <Link to="/books">Libros</Link> {}
+        <Link to="/my-loans">Mis préstamos</Link> {}
         <button onClick={logout} className="ml-auto text-red-600">Cerrar sesión</button>
       </header>
       <main className="p-4">
@@ -36,11 +36,11 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route element={<ProtectedLayout />}>
-          <Route path="/books" element={<DashboardPage />} /> {/* CAMBIÓ */}
-          <Route path="/books/:id" element={<RoomDetailPage />} /> {/* CAMBIÓ */}
-          <Route path="/my-loans" element={<MyBookingsPage />} /> {/* CAMBIÓ */}
+          <Route path="/books" element={<MaterialsPage />} /> {}
+          <Route path="/books/:id" element={<RoomDetailPage />} /> {}
+          <Route path="/my-loans" element={<MyBookingsPage />} /> {}
         </Route>
-        <Route path="*" element={<Navigate to="/books" replace />} /> {/* CAMBIÓ */}
+        <Route path="*" element={<Navigate to="/Authorization}" replace />} /> {}
       </Routes>
     </BrowserRouter>
   );

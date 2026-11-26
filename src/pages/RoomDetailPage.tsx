@@ -71,7 +71,7 @@ export default function RoomDetailPage() {
   return (
     <div className="max-w-xl">
       <Link to="/books" className="text-blue-600 underline">← Volver al catálogo</Link> {}
-      {/* CAMBIÓ: los datos del libro */}
+      {}
       <h1 className="text-2xl font-bold mt-4">{book.title}</h1>
       <p>Autor: {book.author}</p>
       <p>Categoría: {book.category}</p>

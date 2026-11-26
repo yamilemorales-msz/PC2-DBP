@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api, apiError, type Booking } from '../api';
 
-export default function MyBookingsPage() {
+export default function MyLoansPage() {
   const [items, setItems] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
